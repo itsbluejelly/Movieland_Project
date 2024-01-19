@@ -37,6 +37,7 @@ export default function App() {
     // A FUNCTION TO FETCH THE MOVIE DATA
     const fetchMovieData: (searchString: string) => Promise<void> = React.useCallback(async(searchString) => {
         setIsLoading(true)
+        setError('')
 
         try{
             const res: Response = await fetch(`${API_URL}&s=${searchString}`)
@@ -63,13 +64,13 @@ export default function App() {
     }, [fetchMovieData])
 
     // A FUNCTION TO GENERATE AN ARRAY OF MOVIES
-    const generateMoviesArray = () => movies.map(movie => <Movie
+    const generateMoviesArray: JSX.Element[] = React.useMemo(() => movies.map(movie => <Movie
         Title={movie.Title}
         Year={movie.Year}
         Type={movie.Type}
         Poster={movie.Poster}
         key={movie.imdbID}
-    />)
+    />), [movies])
 
     return (
         <div className="app">
@@ -93,7 +94,7 @@ export default function App() {
                     {
                         movies.length
                             ?
-                        generateMoviesArray()
+                        generateMoviesArray
                             :
                         <h2>No movies found😥</h2>
                     }

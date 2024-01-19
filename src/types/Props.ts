@@ -9,7 +9,7 @@ export type InputBarProps = {
     formData: AppFormData,
     handleFormData: (e: React.ChangeEvent<HTMLInputElement>) => void,
     loading: boolean,
-    fetchData: () => Promise<void>
+    fetchData: (searchString: string) => Promise<void>
 }
 
 // DECLARING PROPS FOR THE MOVIE COMPONENT

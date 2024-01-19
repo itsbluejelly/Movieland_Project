@@ -7,8 +7,8 @@ export function arrayHasMovies(array: unknown): array is MovieDataType[]{
         return array.every(item => (
             typeof item === "object" && item !== null &&
             "Title" in item && typeof item.Title === "string" &&
-            "Year" in item && typeof item.Year === "string" &&
-            "imdbID" in item && typeof item.imbdID === "string" &&
+            "Year" in item && typeof item.Year === "string"&&
+            "imdbID" in item && typeof item.imdbID === "string"&&
             "Type" in item && typeof item.Type === "string" &&
             "Poster" in item && typeof item.Poster === "string"
         ))

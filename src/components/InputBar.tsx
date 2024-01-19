@@ -22,6 +22,7 @@ export default function InputBar({formData, handleFormData, loading, fetchData}:
                 alt="Search icon"
                 title="Search icon"
                 loading="lazy"
+                width={100}
                 onClick={() => fetchData()}
             />}
         </div>

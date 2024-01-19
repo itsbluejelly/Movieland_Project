@@ -1,5 +1,8 @@
-// IMPORTING NECESSARY TYPES
-import {AppFormData} from "./Types"
+// IMPORTING NECESSARY FILES
+    // IMPORTING TYPES
+import {AppFormData, MovieDataType} from "./Types"
+    // IMPORTING GENERICS
+import {ObjectEmitter} from "./Generics"
 
 // DECLARING PROPS FOR THE INPUTBAR COMPONENT
 export type InputBarProps = {
@@ -8,3 +11,6 @@ export type InputBarProps = {
     loading: boolean,
     fetchData: () => Promise<void>
 }
+
+// DECLARING PROPS FOR THE MOVIE COMPONENT
+export type MovieProps = ObjectEmitter<MovieDataType, "imdbID">

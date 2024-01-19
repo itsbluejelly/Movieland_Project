@@ -10,7 +10,7 @@ import Movie from "./components/Movie"
 import {arrayHasMovies} from "./types/Guards"
 
 // A VARIABLE TO HOLD THE API URL
-const API_URL: string = "http://www.omdbapi.com/?apikey=86d3b8e1"
+const API_URL: string = "https://www.omdbapi.com/?apikey=86d3b8e1"
 
 // DECLARING A FUNCTION THAT RETURNS AN APP COMPONENT
 export default function App() {
